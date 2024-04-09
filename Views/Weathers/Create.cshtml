@@ -1,0 +1,63 @@
+﻿@model WeatherApplication.Models.Weather
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Weather</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="temp" class="control-label"></label>
+                <input asp-for="temp" class="form-control" />
+                <span asp-validation-for="temp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="windSpeed" class="control-label"></label>
+                <input asp-for="windSpeed" class="form-control" />
+                <span asp-validation-for="windSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hum" class="control-label"></label>
+                <input asp-for="hum" class="form-control" />
+                <span asp-validation-for="hum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="month" class="control-label"></label>
+                <input asp-for="month" class="form-control" />
+                <span asp-validation-for="month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="day" class="control-label"></label>
+                <input asp-for="day" class="form-control" />
+                <span asp-validation-for="day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hour" class="control-label"></label>
+                <input asp-for="hour" class="form-control" />
+                <span asp-validation-for="hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
