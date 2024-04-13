@@ -54,7 +54,7 @@ namespace WeatherApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,temp,windSpeed,hum,month,day,hour")] Weather weather)
+        public async Task<IActionResult> Create([Bind("id,name,temp,windSpeed,hum,month,day,hour")] oWeather weather)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace WeatherApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,temp,windSpeed,hum,month,day,hour")] Weather weather)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,temp,windSpeed,hum,month,day,hour")] oWeather weather)
         {
             if (id != weather.id)
             {

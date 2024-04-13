@@ -1,6 +1,8 @@
-﻿namespace WeatherApplication.Models
+﻿using Newtonsoft.Json;
+
+namespace WeatherApplication.Models
 {
-    public class Weather
+    public class oWeather
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -11,7 +13,10 @@
         public int day { get; set; }
         public int hour { get; set; }
 
-        public Weather() { }
+        public oWeather() { }
 
     }
+
+
 }
+
