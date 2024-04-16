@@ -16,9 +16,7 @@ namespace WeatherApplication.Services
         {
             var httpClient = new HttpClient();
             var response = await httpClient.GetStringAsync(string.Format("api.openweathermap.org/data/2.5/forecast?q={0}&appid=4b00570f91b09ef35a70dff6fd11fb4e", city));
-            Root Info = JsonConvert.DeserializeObject<Root>(response);
-            oWeather.windSpeed = Info.wind.speed.ToString();
-
+            return JsonConvert.DeserializeObject<Root>(response);
         }
     }
 }

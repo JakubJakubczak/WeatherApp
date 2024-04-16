@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherApplication.Data;
 
@@ -11,9 +12,11 @@ using WeatherApplication.Data;
 namespace WeatherApplication.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415180553_ChangesInOWeather")]
+    partial class ChangesInOWeather
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,16 +235,16 @@ namespace WeatherApplication.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int?>("day")
+                    b.Property<int>("day")
                         .HasColumnType("int");
 
-                    b.Property<int?>("hour")
+                    b.Property<int>("hour")
                         .HasColumnType("int");
 
                     b.Property<double>("hum")
                         .HasColumnType("float");
 
-                    b.Property<int?>("month")
+                    b.Property<int>("month")
                         .HasColumnType("int");
 
                     b.Property<string>("name")
