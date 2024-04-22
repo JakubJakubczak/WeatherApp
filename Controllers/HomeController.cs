@@ -23,9 +23,9 @@ namespace WeatherApplication.Controllers
             // Konwersja temperatury z Fahrenheitów na stopnie Celsiusza
             foreach (var forecast in weather.list)
             {
-                forecast.main.temp = ConvertKelvinToCelsius(forecast.main.temp);
-                forecast.main.temp_min = ConvertKelvinToCelsius(forecast.main.temp_min);
-                forecast.main.temp_max = ConvertKelvinToCelsius(forecast.main.temp_max);
+                forecast.main.temp = Math.Round(ConvertKelvinToCelsius(forecast.main.temp),1);
+                forecast.main.temp_min = Math.Round(ConvertKelvinToCelsius(forecast.main.temp_min),1);
+                forecast.main.temp_max = Math.Round(ConvertKelvinToCelsius(forecast.main.temp_max),1);
             }
 
             return View(weather);
