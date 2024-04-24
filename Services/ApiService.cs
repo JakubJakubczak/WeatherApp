@@ -18,5 +18,7 @@ namespace WeatherApplication.Services
             var response = await httpClient.GetStringAsync(string.Format("https://api.openweathermap.org/data/2.5/forecast?q={0}&appid=4b00570f91b09ef35a70dff6fd11fb4e", city));
             return JsonConvert.DeserializeObject<Root>(response);
         }
+
+
     }
 }

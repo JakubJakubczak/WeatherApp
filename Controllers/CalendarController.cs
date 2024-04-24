@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using WeatherApplication.Models;
 
 namespace WeatherApplication.Controllers
 {
@@ -9,5 +11,23 @@ namespace WeatherApplication.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult GetSelectedDatesAndCity(string city, string[] selectedDates)
+        {
+
+            Debug.WriteLine("City: " + city);
+            foreach (var date in selectedDates)
+            {
+                Debug.WriteLine("Selected Date: " + date);
+            }
+
+
+            return Ok(); 
+        }
+
     }
+
+
 }
+
