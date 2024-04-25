@@ -36,7 +36,7 @@ namespace WeatherApplication.Controllers
             return (Kelvin - 273.15);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy()  
         {
             return View();
         }
