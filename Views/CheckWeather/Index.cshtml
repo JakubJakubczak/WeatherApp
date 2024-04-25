@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Check Weather";
+}
+
+<div class="text-center">
+    <<h1>Check Weather</h1>
+
+    <form asp-action="ShowWeather" method="post">
+        <label for="city">Enter city:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Show Weather</button>
+    </form>
+
+    <div id="weatherDetails"></div>
+</div>

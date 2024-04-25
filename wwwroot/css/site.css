@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.selected {
+    background-color: #ffffcc; 
+    border: 1px solid #ccc; 
+}
