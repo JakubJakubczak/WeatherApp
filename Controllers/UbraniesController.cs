@@ -65,6 +65,19 @@ namespace WeatherApplication.Controllers
             return View(ubranie);
         }
 
+        /*[HttpPost]
+       // public async Task<IActionResult> Create(string ddlOptions)
+        {
+            // `ddlOptions` contains the selected value from the dropdown list
+            // You can assign it to a variable or use it as needed
+         //   var selectedValue = ddlOptions;
+
+            // Your code to process the selected value
+            // Example: SaveToDatabase(selectedValue);
+
+            return RedirectToAction("Create"); // Redirect to another action
+        }*/
+
         // GET: Ubranies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

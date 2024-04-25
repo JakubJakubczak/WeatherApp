@@ -14,7 +14,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="rodzaj_ubrania" class="control-label"></label>
-                <input asp-for="rodzaj_ubrania" class="form-control" />
+                <select asp-for="rodzaj_ubrania" class="form-control">
+                    <option value="">Wybierz opcję</option>
+                    <option value="Spodnie">Spodnie</option>
+                    <option value="Krótkie spodenki">Krótkie spodenki</option>
+                    <option value="Bluza">Bluza</option>
+                    <option value="Koszulka">Koszulka</option>
+                    <option value="Kurtka">Kurtka</option>
+                </select>
                 <span asp-validation-for="rodzaj_ubrania" class="text-danger"></span>
             </div>
             <div class="form-group">

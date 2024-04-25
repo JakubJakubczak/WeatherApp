@@ -3,6 +3,7 @@ using System.Diagnostics;
 using WeatherApplication.Models;
 using WeatherApplication.Services;
 
+
 namespace WeatherApplication.Controllers
 {
     public class HomeController : Controller
@@ -18,6 +19,7 @@ namespace WeatherApplication.Controllers
         {
             return View();
         }
+
 
         public IActionResult Privacy()  
         {
