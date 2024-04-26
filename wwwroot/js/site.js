@@ -4,43 +4,60 @@
 // Write your JavaScript code.
 
 document.addEventListener('DOMContentLoaded', function () {
-    var selectedDates = []; // Tablica do przechowywania zaznaczonych dat
+    var startDate = null; // Zmienna do przechowywania daty początkowej
+    var endDate = null; // Zmienna do przechowywania daty końcowej
 
     // Obsługa zdarzenia kliknięcia na dniu kalendarza
     $('.fc-day').click(function () {
         var clickedDate = $(this).attr('data-date');
 
-        // Sprawdzamy, czy kliknięty dzień jest już zaznaczony
-        if (selectedDates.includes(clickedDate)) {
-            $(this).removeClass('selected'); // Usuwamy klasę selected, aby odznaczyć dzień
-            selectedDates = selectedDates.filter(date => date !== clickedDate); // Usuwamy kliknięty dzień z tablicy
-        } else {
-            if (selectedDates.length < 2) { // Sprawdzamy, czy użytkownik zaznaczył już dwie daty
-                // Dodajemy klasę selected, aby zaznaczyć dzień
-                $(this).addClass('selected');
-                selectedDates.push(clickedDate); // Dodajemy kliknięty dzień do tablicy
+        if (startDate === null) {
+            // Jeśli nie ma jeszcze daty początkowej, ustawiamy ją jako klikniętą datę
+            startDate = clickedDate;
+            $(this).addClass('selected-start');
+        } else if (endDate === null) {
+            // Jeśli jest już ustawiona data początkowa, ale nie ma jeszcze daty końcowej
+            if (clickedDate > startDate) {
+                // Jeśli kliknięta data jest późniejsza niż data początkowa, ustawiamy ją jako datę końcową
+                endDate = clickedDate;
+                $(this).addClass('selected-end');
+            } else {
+                // Jeśli kliknięta data jest wcześniejsza niż data początkowa, zamieniamy daty miejscami
+                endDate = startDate;
+                startDate = clickedDate;
+                $(this).addClass('selected-start');
+                $('.selected-end').removeClass('selected-end');
             }
+        } else {
+            // Jeśli obie daty są już ustawione, resetujemy je i ustawiamy nową datę początkową jako klikniętą datę
+            startDate = clickedDate;
+            endDate = null;
+            $('.selected-start').removeClass('selected-start');
+            $('.selected-end').removeClass('selected-end');
+            $(this).addClass('selected-start');
         }
     });
 
     $('#showWeatherButton').click(function () {
         var city = $('#cityInput').val();
 
-        // Wyślij żądanie AJAX do akcji "GetSelectedDatesAndCity" z miastem i wybranymi datami podróży
-        $.ajax({
-            url: '/Calendar/GetSelectedDatesAndCity',
-            method: 'post',
-            data: { city: city, selectedDates: selectedDates },
-            success: function (data) {
-                // Wyświetlenie otrzymanych danych w konsoli
-                console.log('Otrzymane dane:', data);
-
-                // Tutaj możemy przetwarzać otrzymane dane, np. wyświetlić je na stronie
-            },
-            error: function (xhr, status, error) {
-                // Obsługa błędu
-                console.error(error);
-            }
-        });
+        if (startDate !== null && endDate !== null) {
+            // Wyślij żądanie AJAX do akcji "GetSelectedDatesAndCity" z miastem, datą początkową i datą końcową
+            $.ajax({
+                url: '/Calendar/GetSelectedDatesAndCity',
+                method: 'post',
+                data: { city: city, startDate: startDate, endDate: endDate },
+                success: function (data) {
+                    console.log('Otrzymane dane:', data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        } else {
+            console.log('Wybierz datę początkową i końcową podróży.');
+        }
     });
 });
+
+

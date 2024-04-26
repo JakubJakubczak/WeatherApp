@@ -25,3 +25,13 @@ body {
     background-color: #ffffcc; 
     border: 1px solid #ccc; 
 }
+
+.selected-start {
+    background-color: #ffffcc; /* Kolor t³a dla daty pocz¹tkowej */
+    border: 1px solid #ccc; /* Styl obramowania dla daty pocz¹tkowej */
+}
+
+.selected-end {
+    background-color: #ffffcc; /* Kolor t³a dla daty koñcowej */
+    border: 1px solid #ccc; /* Styl obramowania dla daty koñcowej */
+}
