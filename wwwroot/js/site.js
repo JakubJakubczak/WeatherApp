@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: { city: city, startDate: startDate, endDate: endDate },
                 success: function (data) {
                     console.log('Otrzymane dane:', data);
+
+                    // Wyświetlenie danych pogodowych i listy ubrań
+                    $('#weatherDetailsContainer').append('<h2>Lista ubrań</h2>');
+                    data.clothesByDate.forEach(function (clothes) {
+                        $('#weatherDetailsContainer').append('<p>' + clothes + '</p>');
+                    });
                 },
                 error: function (xhr, status, error) {
                     console.error(error);
@@ -59,5 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
 
