@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WeatherApplication.Data;
 using WeatherApplication.Models;
 using WeatherApplication.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -13,6 +14,12 @@ namespace WeatherApplication.Controllers
     public class CalendarController : Controller
     {
 
+        private readonly ApplicationDbContext _context;
+
+        public CalendarController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
@@ -67,6 +74,10 @@ namespace WeatherApplication.Controllers
 
             // Wywołujemy funkcję ChooseClothes z danymi pogodowymi
             List<string> clothes = ChooseClothes(temperaturesByDate);
+            Tuple<List<string>, List<string>> ClotheToTakeAndToBuy = ClothesToTake(clothes);
+
+            List<string> clothesToTake = ClotheToTakeAndToBuy.Item1;
+            List<string> clothesToBuy = ClotheToTakeAndToBuy.Item2;
 
             // Wyświetlamy dane dla każdej daty
             foreach (var date in temperaturesByDate.Keys)
@@ -77,12 +88,47 @@ namespace WeatherApplication.Controllers
                 Debug.WriteLine("Clothes: " + string.Join(", ", clothes)); 
             }
 
-            return Ok(new { TemperaturesByDate = temperaturesByDate, DescriptionsByDate = descriptionsByDate, ClothesByDate = clothes });
+            return Ok(new { TemperaturesByDate = temperaturesByDate, DescriptionsByDate = descriptionsByDate, ClothesByDate = clothesToTake, ClothesBuy = clothesToBuy });
 
         }
 
-            private List<string> ChooseClothes(Dictionary<string, List<double>> temperaturesByDate)
-             {
+        private Tuple<List<string>, List<string>> ClothesToTake(List<string> clothes_needed)
+        {   
+            List<string> clothesToTake = new List<string>();
+            List<string> clothesToBuy = new List<string>();
+            List<string> clothesWeHave = new List<string>();
+            List<string> clothesWeNeed = clothes_needed;
+
+            // query na jakie ubrania są w bazie
+            var clothes = _context.Ubranie.Select(w => w.rodzaj_ubrania).ToList();
+
+
+            // tutaj w sumie bez sensu ale niech zostanie na razie
+            foreach (var clothe in clothes)
+            {
+                clothesWeHave.Add(clothe);
+            }
+
+            foreach (var clothe in clothesWeNeed)
+            {
+                if(clothesWeHave.Contains(clothe))
+                {
+                    clothesToTake.Add(clothe);
+                    clothesWeHave.Remove(clothe);
+                }
+                else
+                {
+                    clothesToBuy.Add(clothe);
+                }
+            }
+
+            Tuple<List<string>, List<string>> ClotheToTakeAndToBuy = new Tuple<List<string>, List<string>>(clothesToTake, clothesToBuy);
+
+            return ClotheToTakeAndToBuy;
+        }
+
+        private List<string> ChooseClothes(Dictionary<string, List<double>> temperaturesByDate)
+        {
             List<string> clothes = new List<string>();
             bool isJacketNeeded = false;
             bool isSweatshirtNeeded = false;
@@ -109,18 +155,20 @@ namespace WeatherApplication.Controllers
                     }
                 }
 
-                clothes.Add("T-shirt");
-                clothes.Add("Bielizna");
-
+                clothes.Add("Koszulka");
                 if (isShortsNeeded)
                 {
-                    clothes.Add("Krotkie spodnie");
+                    clothes.Add("Krotkie spodednki");
+                }
+                else
+                {
+                    clothes.Add("Spodnie");
                 }
             }
 
             if (isJacketNeeded)
             {
-                clothes.Add("Kortka");
+                clothes.Add("Kurtka");
             }
 
             if (isSweatshirtNeeded)
@@ -129,7 +177,7 @@ namespace WeatherApplication.Controllers
             }
 
             return clothes;
-        }
+    }
 
 
 

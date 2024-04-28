@@ -50,9 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 success: function (data) {
                     console.log('Otrzymane dane:', data);
 
-                    // Wyświetlenie danych pogodowych i listy ubrań
-                    $('#weatherDetailsContainer').append('<h2>Lista ubrań</h2>');
+                    // Wyświetlenie  listy ubrań do wzięcia
+                    $('#weatherDetailsContainer').append('<h2>Lista ubrań, które należy wziąć:</h2>');
                     data.clothesByDate.forEach(function (clothes) {
+                        $('#weatherDetailsContainer').append('<p>' + clothes + '</p>');
+                    });
+                    $('#weatherDetailsContainer').append('<h2>Ubrania, których brakuje i należałoby je dokupić:</h2>');
+                    data.clothesBuy.forEach(function (clothes) {
                         $('#weatherDetailsContainer').append('<p>' + clothes + '</p>');
                     });
                 },
