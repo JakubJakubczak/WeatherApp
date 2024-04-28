@@ -20,10 +20,13 @@
 
   <ItemGroup>
     <Compile Remove="Views\Home\Calendar.cshtml.cs" />
+    <Compile Remove="Views\Shared\_WeatherDetailsPartial - kopiować.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Home\Calendar.cshtml" />
+    <Content Remove="Views\Shared\_PlanerUbranPartial.cshtml" />
+    <Content Remove="Views\Shared\_WeatherDetailsPartial - kopiować.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

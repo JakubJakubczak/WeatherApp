@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: { city: city, startDate: startDate, endDate: endDate },
                 success: function (data) {
                     console.log('Otrzymane dane:', data);
+                    $('body').append(data);
                 },
                 error: function (xhr, status, error) {
                     console.error(error);

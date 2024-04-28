@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using WeatherApplication.Services;
+using WeatherApplication.Views.Shared;
 
 namespace WeatherApplication.Controllers
 {

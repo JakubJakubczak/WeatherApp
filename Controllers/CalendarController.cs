@@ -18,6 +18,13 @@ namespace WeatherApplication.Controllers
             return (Kelvin - 273.15);
         }
 
+       // [HttpPost]
+        //public async Task<IActionResult> ShowPlan(string city)
+        //{
+        //
+        //    return PartialView("_PlanerUbranPartial");
+        //}
+
         [HttpPost]
         public async Task<IActionResult> GetSelectedDatesAndCity(string city, string startDate, string endDate)
         {
@@ -62,7 +69,7 @@ namespace WeatherApplication.Controllers
                 Debug.WriteLine(desc);
             }
 
-            return Ok(new { Temperatures = selectedTemperatures, Descriptions = selectedDescriptions });
+            return PartialView("_PlaneUbranPartial"); //, new { Temperatures = selectedTemperatures, Descriptions = selectedDescriptions }
         }
 
 
