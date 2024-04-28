@@ -35,3 +35,8 @@ body {
     background-color: #ffffcc; /* Kolor t³a dla daty koñcowej */
     border: 1px solid #ccc; /* Styl obramowania dla daty koñcowej */
 }
+
+#weatherDetailsContainer {
+    width: 100%;
+    height: auto;
+}
