@@ -1,5 +1,8 @@
 ﻿namespace WeatherApplication.Models
 {
+    /// <summary>
+    /// Model do przechowywania ubran w bazie danych
+    /// </summary>
     public class Ubranie
     {
         public int id { get; set; }
