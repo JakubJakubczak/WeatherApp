@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeatherApplication</name>
+    </assembly>
+    <members>
+        <member name="T:WeatherApplication.Controllers.CalendarController">
+            <summary>
+            Obsługa podstrony do planowania wycieczek
+            </summary>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CalendarController.ConvertKelvinToCelsius(System.Double)">
+            <summary>
+            Zamiana Stopni w skali Kelvina na stopnie w skali Celciusza
+            </summary>
+            <param name="Kelvin">Stopnie w skali Kelvina</param>
+            <returns>Stopnie w skaali celcjusza</returns>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CalendarController.GetSelectedDatesAndCity(System.String,System.String,System.String)">
+            <summary>
+            Ustlenie listy pogody i listy ubran
+            </summary>
+            <param name="city">Miasto potrzebna do ustalenia pogody przez api</param>
+            <param name="startDate">Data poczatku wycieczki</param>
+            <param name="endDate">Data konca wycieczki</param>
+            <returns>4 Listy: temperatur, opisow pogody, ubran które sa potrzebne, i ubran ktore posiada uzytkownik </returns>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CalendarController.ClothesToTake(System.Collections.Generic.List{System.String})">
+            <summary>
+            Tutaj trzeba dodac jeszcze
+            </summary>
+            <param name="clothes_needed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CalendarController.ChooseClothes(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Double}})">
+            <summary>
+            Logika dobierania ubran na podstawie temperatury
+            </summary>
+            <param name="temperaturesByDate">Lista temperatur dla danej kolekcji dat(dla danej wycieczki)</param>
+            <returns>Liste ubran jakie nalezy zabrac</returns>
+        </member>
+        <member name="T:WeatherApplication.Controllers.CheckWeatherController">
+            <summary>
+            Obsługa podstrony do sprawdzania pogody
+            </summary>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CheckWeatherController.ConvertKelvinToCelsius(System.Double)">
+            <summary>
+            Zamiana Stopni w skali Kelvina na stopnie w skali Celciusza
+            </summary>
+            <param name="Kelvin">Stopnie w skali Kelvina</param>
+            <returns>Stopnie w skaali celcjusza</returns>
+        </member>
+        <member name="M:WeatherApplication.Controllers.CheckWeatherController.ShowWeather(System.String)">
+            <summary>
+            Wyswietlenie pogody na nowej stronie
+            </summary>
+            <param name="city">Nazwa miasta dla ktorego chcemy uzyskac pogode</param>
+            <returns>PartialView z danymi pogodowymi</returns>
+        </member>
+        <member name="T:WeatherApplication.Controllers.WeathersController">
+            <summary>
+            Controler ktory okazal sie nie potrzebny w dalszym tworzeniu aplikacji
+            </summary>
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.initialSetup">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.initialSetup.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.initialSetup.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.initialSetup.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.Root">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.Root.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.Root.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.Root.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.ChangesToWind">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesToWind.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesToWind.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesToWind.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.ChangesInOWeather">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesInOWeather.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesInOWeather.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ChangesInOWeather.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.datechanges">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.datechanges.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.datechanges.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.datechanges.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.ubrania">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ubrania.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ubrania.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.ubrania.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.View">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.View2">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.View2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.opisOptional">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Data.Migrations.opisOptional2">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WeatherApplication.Data.Migrations.opisOptional2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WeatherApplication.Models.City">
+            <summary>
+            Metody pozwalajace odzczytwac poszczegolne dane zawarte w api
+            </summary>
+        </member>
+        <member name="T:WeatherApplication.Models.Ubranie">
+            <summary>
+            Model do przechowywania ubran w bazie danych
+            </summary>
+        </member>
+        <member name="T:WeatherApplication.Models.oWeather">
+            <summary>
+            Model porzucony w czasie rozwoju aplikacji
+            </summary>
+        </member>
+        <member name="T:WeatherApplication.Services.ApiService">
+            <summary>
+            Obsluga polaczenia z api openweathermap
+            </summary>
+        </member>
+        <member name="M:WeatherApplication.Services.ApiService.GetWeather(System.Double,System.Double)">
+            <summary>
+            Pobranie danych pogodowych dla danej lokalizcji
+            </summary>
+            <param name="latitude">szerokosc geograficzna</param>
+            <param name="longitude">dlugosc geograficzna</param>
+            <returns>obeikt typu root zdeserializowany z pliku json otrzymanego z api</returns>
+        </member>
+        <member name="M:WeatherApplication.Services.ApiService.GetWeatherByCity(System.String)">
+            <summary>
+            Pobranie danych pogodowych dla danego miasta
+            </summary>
+            <param name="city">Miasto dla ktorego chcemy pobrac pogode</param>
+            <returns>obeikt typu root zdeserializowany z pliku json otrzymanego z api</returns>
+        </member>
+    </members>
+</doc>

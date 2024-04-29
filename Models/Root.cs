@@ -3,6 +3,9 @@
 namespace WeatherApplication.Models
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+    /// <summary>
+    /// Metody pozwalajace odzczytwac poszczegolne dane zawarte w api
+    /// </summary>
     public class City
     {
         public int id { get; set; }

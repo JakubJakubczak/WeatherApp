@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-WeatherApplication-e2dc1eaf-1c97-48c1-bfe9-ad2d5d0c0d9c</UserSecretsId>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>K:\Projekty na studia git\.net\WeatherApp\Dokumentacja\Doc.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

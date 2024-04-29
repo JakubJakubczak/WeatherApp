@@ -2,6 +2,9 @@
 
 namespace WeatherApplication.Models
 {
+    /// <summary>
+    /// Model porzucony w czasie rozwoju aplikacji
+    /// </summary>
     public class oWeather
     {
         public int id { get; set; }

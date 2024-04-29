@@ -3,8 +3,17 @@ using WeatherApplication.Models;
 
 namespace WeatherApplication.Services
 {
+    /// <summary>
+    /// Obsluga polaczenia z api openweathermap
+    /// </summary>
     public static class ApiService
     {
+        /// <summary>
+        /// Pobranie danych pogodowych dla danej lokalizcji
+        /// </summary>
+        /// <param name="latitude">szerokosc geograficzna</param>
+        /// <param name="longitude">dlugosc geograficzna</param>
+        /// <returns>obeikt typu root zdeserializowany z pliku json otrzymanego z api</returns>
         public static async Task<Root> GetWeather(double latitude, double longitude)
         {
             var httpClient = new HttpClient();
@@ -12,6 +21,11 @@ namespace WeatherApplication.Services
             return JsonConvert.DeserializeObject<Root>(response);
         }
 
+        /// <summary>
+        /// Pobranie danych pogodowych dla danego miasta
+        /// </summary>
+        /// <param name="city">Miasto dla ktorego chcemy pobrac pogode</param>
+        /// <returns>obeikt typu root zdeserializowany z pliku json otrzymanego z api</returns>
         public static async Task<Root> GetWeatherByCity(string city)
         {
             var httpClient = new HttpClient();

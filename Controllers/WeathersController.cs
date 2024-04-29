@@ -8,8 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using WeatherApplication.Data;
 using WeatherApplication.Models;
 
+
+
 namespace WeatherApplication.Controllers
-{
+{   
+    /// <summary>
+    /// Controler ktory okazal sie nie potrzebny w dalszym tworzeniu aplikacji
+    /// </summary>
     public class WeathersController : Controller
     {
         private readonly ApplicationDbContext _context;
