@@ -8,4 +8,4 @@
         public string? opis { get; set; }
 
     }
-}
+}   
