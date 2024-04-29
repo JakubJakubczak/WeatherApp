@@ -58,11 +58,6 @@
             <param name="city">Nazwa miasta dla ktorego chcemy uzyskac pogode</param>
             <returns>PartialView z danymi pogodowymi</returns>
         </member>
-        <member name="T:WeatherApplication.Controllers.WeathersController">
-            <summary>
-            Controler ktory okazal sie nie potrzebny w dalszym tworzeniu aplikacji
-            </summary>
-        </member>
         <member name="T:WeatherApplication.Data.Migrations.initialSetup">
             <inheritdoc />
         </member>
@@ -191,11 +186,6 @@
         <member name="T:WeatherApplication.Models.Ubranie">
             <summary>
             Model do przechowywania ubran w bazie danych
-            </summary>
-        </member>
-        <member name="T:WeatherApplication.Models.oWeather">
-            <summary>
-            Model porzucony w czasie rozwoju aplikacji
             </summary>
         </member>
         <member name="T:WeatherApplication.Services.ApiService">

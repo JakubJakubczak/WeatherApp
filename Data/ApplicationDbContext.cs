@@ -10,7 +10,6 @@ namespace WeatherApplication.Data
             : base(options)
         {
         }
-        public DbSet<WeatherApplication.Models.oWeather> Weather { get; set; } = default!;
         public DbSet<WeatherApplication.Models.Ubranie> Ubranie { get; set; } = default!;
     }
 }
