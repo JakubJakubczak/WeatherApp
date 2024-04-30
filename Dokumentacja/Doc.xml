@@ -27,10 +27,10 @@
         </member>
         <member name="M:WeatherApplication.Controllers.CalendarController.ClothesToTake(System.Collections.Generic.List{System.String})">
             <summary>
-            Tutaj trzeba dodac jeszcze
+            Porownanie ubran potrzebnych na wycieczke z posiadanymi ubraniami i na tej podstawie okreslenie jakie ubrania wziac i jakie kupic
             </summary>
-            <param name="clothes_needed"></param>
-            <returns></returns>
+            <param name="clothes_needed">Ciuchy potrzebne na wycieczke</param>
+            <returns>Tuple z dwoma listami stringow - 1 jakie ubrania wziac, 2 - jakie ubrania kupic</returns>
         </member>
         <member name="M:WeatherApplication.Controllers.CalendarController.ChooseClothes(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Double}})">
             <summary>

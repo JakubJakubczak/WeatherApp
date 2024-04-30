@@ -101,10 +101,10 @@ namespace WeatherApplication.Controllers
            
         }
         /// <summary>
-        /// Tutaj trzeba dodac jeszcze
+        /// Porownanie ubran potrzebnych na wycieczke z posiadanymi ubraniami i na tej podstawie okreslenie jakie ubrania wziac i jakie kupic
         /// </summary>
-        /// <param name="clothes_needed"></param>
-        /// <returns></returns>
+        /// <param name="clothes_needed">Ciuchy potrzebne na wycieczke</param>
+        /// <returns>Tuple z dwoma listami stringow - 1 jakie ubrania wziac, 2 - jakie ubrania kupic</returns>
         private Tuple<List<string>, List<string>> ClothesToTake(List<string> clothes_needed)
         {   
             List<string> clothesToTake = new List<string>();
